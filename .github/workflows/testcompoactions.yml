@@ -18,3 +18,4 @@ jobs:
           number1: 2
           number2: 3
       - run: echo ${{ steps.compoAct.outputs.random-number }}
+      - run: echo ${{ steps.compoAct.outputs.result }}
