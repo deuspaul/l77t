@@ -4,9 +4,17 @@ inputs:
   who-to-greet: 
     required: true
     default: world
+  number1:
+    required: true
+    default: 0
+  number2:
+    required: true
+    default: 0
 outputs:
   random-number:
     value: ${{ steps.random-number-generator.outputs.random-number }}
+  result:
+    value: ${{ steps.sum-result.outputs.result }}
 runs:
   using: composite
   steps:
@@ -21,3 +29,10 @@ runs:
       shell: bash
     - run: goodbye.sh
       shell: bash
+    - shell: bash
+      id: sum-result
+      run: |
+        num1=${{ inputs.number1 }}
+        num2=${{ inputs.number2 }}
+        echo "result=$num1+num2" >> "$GITHUB_OUTPUT"
+      
