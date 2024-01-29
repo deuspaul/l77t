@@ -15,4 +15,6 @@ jobs:
         id: compoAct
         with:
           who-to-greet: tester
+          number1: 2
+          number2: 3
       - run: echo ${{ steps.compoAct.outputs.random-number }}
