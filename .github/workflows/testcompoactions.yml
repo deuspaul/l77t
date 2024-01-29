@@ -11,7 +11,7 @@ jobs:
       - run: ls
       - run: ls ./
       - run: pwd
-      - uses: ./l77t
+      - uses: ./
         id: compoAct
         with:
           who-to-greet: tester
