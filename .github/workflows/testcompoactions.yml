@@ -1,0 +1,14 @@
+name: test composite actions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-c-a:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./l77t
+        id: compoAct
+        with:
+          who-to-greet: tester
+      - run: echo ${{ steps.compoAct.outputs.random-number }}
