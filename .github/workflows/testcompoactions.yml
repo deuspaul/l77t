@@ -11,7 +11,7 @@ jobs:
       - run: ls
       - run: ls ./
       - run: pwd
-      - uses: .
+      - uses: ./
         id: compoAct
         with:
           who-to-greet: tester
